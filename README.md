@@ -1,6 +1,6 @@
 # Miscellaneous scripts and demos
 
-Non salting encryption system in rebol seen in locknote
+Non salting encryption system in locknote.r
 
 	crypt: func [
 		"Encrypts or decrypts data and returns the result." 
