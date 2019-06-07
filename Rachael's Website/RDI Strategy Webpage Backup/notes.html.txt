@@ -1,0 +1,68 @@
+
+/* Design */
+* {line-height:2 } /*; font-size: 1.5em;}*/
+body {margin:100}
+* {font-size: 1.5em;}
+a:link { font-size: 1em;}
+/* p.MsoNormal, li.MsoNormal, div.MsoNormal{ font-size: 1.5em } */
+
+/*
+p.MsoNormal, li.MsoNormal, div.MsoNormal,
+h1, h2, h3, h4, h5,
+p.MsoToc1, li.MsoToc1, div.MsoToc1,
+p.MsoToc2, li.MsoToc2, div.MsoToc2,
+p.MsoToc3, li.MsoToc3, div.MsoToc3,
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText,
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText,
+p.MsoHeader, li.MsoHeader, div.MsoHeader,
+p.MsoFooter, li.MsoFooter, div.MsoFooter,
+span.MsoFootnoteReference,
+p.MsoTitle, li.MsoTitle, div.MsoTitle,
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst,
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle,
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast,
+p,
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject,
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate,
+p.MsoRMPane, li.MsoRMPane, div.MsoRMPane,
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph,
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst,
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle,
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast,
+span.MsoSubtleReference,
+span.MsoBookTitle,
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading,
+span.Heading2Char,
+span.Heading3Char,
+span.CommentTextChar,
+span.CommentTextChar,
+ span.CommentTextChar,
+span.BalloonTextChar,
+span.Heading1Char,
+span.TitleChar,
+span.ListParagraphChar,
+span.Heading4Char,
+span.Heading5Char,
+span.HeaderChar,
+span.FooterChar,
+span.hvr,
+span.UnresolvedMention1,
+span.FootnoteTextChar,
+span.msoIns,
+span.msoDel,
+.MsoChpDefault,
+.MsoPapDefault { font-size: 1.5em !important; }*/
+
+
+/* a:link, span.MsoHyperlink,
+a:visited, span.MsoHyperlinkFollowed,
+
+,
+div.WordSection1,
+div.WordSection2,
+div.WordSection3,
+div.WordSection4,
+div.WordSection5,
+div.WordSection6,
+div.WordSection7
+*/

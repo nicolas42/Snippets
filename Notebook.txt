@@ -1,0 +1,5 @@
+# Install Binary on Mac
+
+	sudo cp <binary> /usr/local/bin
+
+

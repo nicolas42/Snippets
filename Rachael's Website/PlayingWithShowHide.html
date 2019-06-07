@@ -1,0 +1,147 @@
+<html>
+<head>
+	<style>
+		
+		/* CSS reset */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		    margin:0;
+		    padding:0;
+		}
+		html,body {
+		    margin:0;
+		    padding:0;
+		}
+		table {
+		    border-collapse:collapse;
+		    border-spacing:0;
+		}
+		fieldset,img { 
+		    border:0;
+		}
+		input{
+		    border:1px solid #b0b0b0;
+		    padding:3px 5px 4px;
+		    color:#979797;
+		    width:190px;
+		}
+		address,caption,cite,code,dfn,th,var {
+		    font-style:normal;
+		    font-weight:normal;
+		}
+		ol,ul {
+		    list-style:none;
+		}
+		caption,th {
+		    text-align:left;
+		}
+		h1,h2,h3,h4,h5,h6 {
+		    /* font-size:100%;*/
+		    font-weight:normal;
+		}
+		q:before,q:after {
+		    content:'';
+		}
+		abbr,acronym { border:0;
+		}
+		
+		/* * {border: 1px solid green;} */
+		body {
+			margin: 5vw; /* 5% of viewport width */
+		}
+		
+		h1, span {
+			/* Don't use em in this block :( */
+			/* font-family:"Calibri Light",sans-serif; */
+			font-family: "Open Sans", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			text-align: justify;
+			line-height: 2;
+		}
+
+		.hidden {
+			display:none; 
+			margin-left: 1vw;
+
+			margin-top: 2vh; margin-bottom: 2vh; 
+			border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;
+			padding-top: 2vh; padding-bottom: 2vh;
+			
+
+		}
+
+		a {
+			font-family:"Calibri Light",sans-serif;
+			text-decoration:none; 
+			color: #2E74B5;
+
+		}
+		
+		img { 
+			display: block; 
+			width: 90%
+		}
+
+		</style>
+</head>
+	
+<body>
+	<h1>Lorem ipsum </h1>
+
+	
+<span>
+Lorem ipsum dolor sit amet, <a href="javascript:void(0)" onclick="showhide('p1');">consectetur adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	
+	<span id="p1" class='hidden'>
+	<h2>Consectetur Adipiscing Elit</h2>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas. Sit amet cursus sit amet. Et magnis dis parturient montes nascetur. <a href="javascript:void(0)" onclick="showhide('p2')">Nisl condimentum</a> id venenatis a condimentum vitae sapien. 
+
+		<span id="p2" class='hidden'> 
+		<h2>Nisl Condimentum</h2>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<img src="RDI Strategy_Stage 1_Report_Final for ESC_edits.fld/image002.png">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+		cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<a href="javascript:void(0)" onclick="showhide('p2')">Hide</a>
+		</span>
+		
+	<img display="block" src="RDI Strategy_Stage 1_Report_Final for ESC_edits.fld/image003.png">
+	Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Non diam phasellus vestibulum lorem. Nisi vitae suscipit tellus mauris a. Nunc sed blandit libero volutpat sed. In est ante in nibh. Tincidunt id aliquet risus feugiat. Praesent tristique magna sit amet purus gravida quis blandit turpis. Vel fringilla est ullamcorper eget nulla facilisi etiam. Pharetra vel turpis nunc eget lorem. Dolor purus non enim praesent elementum facilisis. Egestas purus viverra accumsan in. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Amet justo donec enim diam vulputate ut pharetra. <a href="javascript:void(0)" onclick="showhide('p1');">Hide</a></span>
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+</body>
+<script>
+	
+	
+	let showhidemap = {
+		'b1': 'p1'
+	}
+
+function showhide(id){
+	/*console.log(event.target);
+	console.log(event.target.nextSibling);
+	var el = document.getElementById(showhidemap[event.target.id]);
+	let el = event.target.nextSibling;*/
+	let el = document.getElementById(id);
+	if (el.style.display == 'block'){
+		el.style.display = 'none';
+	} else {
+		el.style.display = 'block';
+	}
+	return false;
+}
+
+/*let link1 = document.querySelector("#link1");
+link1.addEventListener('click',showhide);*/
+	
+	
+</script>
+
+
+
+</html>
