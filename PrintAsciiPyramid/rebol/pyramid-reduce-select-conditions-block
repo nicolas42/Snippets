@@ -1,0 +1,46 @@
+rebol []
+
+pyramid: func [
+	a
+	/local o b e na i 
+][
+	o: copy []
+	insert o a
+
+	b: 2
+	e: (length? a) - 1
+
+	while [ b < e ] [
+		a: o/1
+		na: copy {}
+		forall a [
+			i: index? a
+			append na select reduce [
+				b > i " " 
+				e < i " "
+				b = i "/"
+				e = i "\"
+				a/1 = #"\" "/"
+				a/1 = #"/" "\"
+			] true
+		]
+		++ b
+		-- e
+		append na {^/}
+		insert o na
+	]
+	rejoin o
+]
+
+
+foreach t [
+	"//\\/\\/\\\\"
+	"/\\\\\\"
+	"//\\\\///\\/\\"
+	"/////////////\\"
+] [
+	print pyramid t
+]
+
+
+

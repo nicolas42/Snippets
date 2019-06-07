@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<!--<meta http-equiv="refresh" content="5" >-->
+</head>
+<body>
+<script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+       }
+</script>
+<button onclick="myFunction()">Reload page</button>
+
+<script>
+function myFunction() {
+    location.reload();
+}
+</script>
+
+
+<button onclick="playPause()">Play/Pause</button> 
+<video id='video1'>
+<source src='/home/nicolas/Downloads/p6d7GRQ.webm' type='video/webm'>
+Your browser doesn't support HTML5 video
+</video>
+
+<img src='file:///home/nicolas/Downloads/giphy.gif'>
+</body></html>
+

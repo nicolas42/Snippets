@@ -1,0 +1,158 @@
+<script src="math.min.js"></script>
+
+<script>
+
+// Span takes a string and outputs a list of values
+// example: span("a1:a3"); => [a1,a2,a3]
+// Currently it can't handle coordinate higher than z9 however.
+
+// Typical usage case is for example
+// math.sum(span("a1:b3"))
+// This is a bit long winded. Ideally this would be
+// sum(a1:b3)
+
+// However, this would require editing the input string before it's evaluated.
+// More specifically, finding ":" characters in the input
+// then replacing the text surrounding it that is enclosed in parentheses
+// with the appropriate text, e.g. "(a1:a3)" => "(a1,a2,a3)"
+
+// This change needs to take place near this line
+// value.substring(1) on line "with (DATA) return eval(value.substring(1));"
+
+function span( a ) {
+
+	// e.g. span("a1:a3"); => [a1,a2,a3]
+	// can't handle coordinate higher than z9 currently
+
+	var o = [];
+
+	var b = a.split(":").join("");
+
+	b.charCodeAt(0)
+
+	var x0 = b.charCodeAt(0)
+	var x1 = b.charCodeAt(2)
+	var y0 = b.charCodeAt(1)
+	var y1 = b.charCodeAt(3)
+
+	for( var i=x0; i<=x1; i+=1 ) {
+	for ( var j=y0; j<=y1; j+=1 ) {
+		o.push( DATA[ String.fromCharCode(i) + String.fromCharCode(j) ] )	
+	}}
+	return o
+}
+
+// Notes:
+
+// localStorage.setItem('myCat', 'Tom');  
+// https://developer.mozilla.org/en/docs/Web/API/Window/localStorage
+
+// math.js
+// set(name, value) Set a variable or function in the parser’s scope.  
+// http://mathjs.org/docs/expressions/parsing.html
+
+</script>
+
+<style>
+li {
+    list-style: none;
+}
+li:before {
+    content: "✓ ";
+}
+
+input {
+    border: none;
+    width: 80px;
+    font-size: 14px;
+    padding: 2px;
+}
+
+input:hover {
+    background-color: #eee;
+}
+
+input:focus {
+    background-color: #ccf;
+}
+
+input:not(:focus) {
+    text-align: right;
+}
+
+table {
+    border-collapse: collapse;  
+}
+
+td {
+    border: 1px solid #999;
+    padding: 0;
+}
+
+tr:first-child td, td:first-child {
+    background-color: #ccc;
+    padding: 1px 3px;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    font-size: 80%;
+}
+
+
+</style>
+
+<body>
+
+<p>Inspired by <a href="http://thomasstreet.net/blog/spreadsheet.html">http://thomasstreet.net/blog/spreadsheet.html</a>. Features:</p>
+
+<ul>
+    <li>Under 30 lines of vanilla JavaScript</li>
+    <li>Libraries used: <strong>none</strong></li>
+    <li>Excel-like syntax (formulas start with "=")</li>
+    <li>Support for arbitrary expressions (=A1+B2*C3)</li>
+    <li>Circular reference prevention</li>
+    <li>Automatic localStorage persistence</li>
+</ul>
+
+<table></table>
+    
+<footer><p>&copy; 2013 <a href="http://ondras.zarovi.cz/">Ondřej Žára</a></p></footer>
+
+</body>
+
+<script>
+// taken from http://jsfiddle.net/ondras/hyfn3/
+
+for (var i=0; i<6; i++) {
+    var row = document.querySelector("table").insertRow(-1);
+    for (var j=0; j<6; j++) {
+        var letter = String.fromCharCode("A".charCodeAt(0)+j-1);
+        row.insertCell(-1).innerHTML = i&&j ? "<input id='"+ letter+i +"'/>" : i||letter;
+    }
+}
+
+var DATA={}, INPUTS=[].slice.call(document.querySelectorAll("input"));
+INPUTS.forEach(function(elm) {
+    elm.onfocus = function(e) {
+        e.target.value = localStorage[e.target.id] || "";
+    };
+    elm.onblur = function(e) {
+        localStorage[e.target.id] = e.target.value;
+        computeAll();
+    };
+    var getter = function() {
+        var value = localStorage[elm.id] || "";
+        if (value.charAt(0) == "=") {
+            with (DATA) return eval(value.substring(1));
+        } else { return isNaN(parseFloat(value)) ? value : parseFloat(value); }
+    };
+    Object.defineProperty(DATA, elm.id, {get:getter});
+    Object.defineProperty(DATA, elm.id.toLowerCase(), {get:getter});
+});
+(window.computeAll = function() {
+    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]; } catch(e) {} });
+})();
+
+</script>
