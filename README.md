@@ -1,40 +1,11 @@
-# Miscellaneous scripts and demos
+(5) The Last Emperor (Theme) - YouTube
+https://www.youtube.com/watch?v=fTtCXTry0DU&list=RDfTtCXTry0DU&start_radio=1
 
-Non salting encryption system in locknote.r
+(5) National Geographic | Endangered Species | BBC Documentary - YouTube
+https://www.youtube.com/watch?v=SmCeHLNPooU
 
-	crypt: func [
-		"Encrypts or decrypts data and returns the result." 
-		data [any-string!] "Data to encrypt or decrypt" 
-		akey [binary!] "The encryption key" 
-		/decrypt "Decrypt the data" 
-		/binary "Produce binary decryption result." 
-		/local port
-	][
-		port: open [
-			scheme: 'crypt 
-			direction: pick [encrypt decrypt] not decrypt 
-			key: akey 
-			padding: true
-		] 
-		insert port data 
-		update port 
-		data: copy port 
-		close port 
-		if all [decrypt not binary] [data: to-string data] 
-		data
-	]
-	encrypt: func [txt pass][
-		join 
-		checksum/secure txt 
-		crypt txt checksum/secure pass
-	]
-	decrypt: func [
-		locknote pass 
-		/local chk1 chk2 note
-	][
-		chk1: copy/part locknote 20 
-		note: crypt/decrypt skip locknote 20 checksum/secure pass 
-		chk2: checksum/secure note 
-		if equal? chk1 chk2 [note]
-	]
+(5) LAST⚡️ LAP , ISLE OF MAN , MANX GRAND PRIX 2019 - YouTube
+https://www.youtube.com/watch?v=lDhYQFUsV8M
 
+(5) "The Landing (from First Man)" by Justin Hurwitz - YouTube
+https://www.youtube.com/watch?v=zcev7yEPeF8
