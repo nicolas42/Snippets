@@ -1,13 +1,10 @@
+sudo nano /usr/share/X11/xkb/symbols/pc
 
-    xmodmap -e "clear Lock"
+check settings
+setxkbmap -query
 
-    xmodmap -e "keycode 66 = Return"
-
-
-
-    # xmodmap -e "keycode 66 = Escape"
-
-    # xrandr --output DP-1 --scale 2x2
+set keyboard map to us
+setxkbmap us
 
 
 
