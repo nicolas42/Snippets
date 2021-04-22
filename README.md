@@ -22,6 +22,10 @@ set keyboard map to us
 setxkbmap us
 
 
+# mount a device 
+sudo mount -t ntfs-3g -o ro /dev/nvme0n1p3 /media/windows/
+
+
 
 fix linux and windows using different clocks
 
