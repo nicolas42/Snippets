@@ -1,8 +1,23 @@
-sudo nano /usr/share/X11/xkb/symbols/pc
+To change capslock to enter modify /usr/share/X11/xkb/symbols/pc.  God knows why it's called pc but it contains the information for modifier keys mappings.  As you might imagine you change a line that has capslock in it.
 
+//    key <CAPS> {      [ Caps_Lock             ]       };
+    key <CAPS> {        [ Return                ]       };
+
+After this reload the keyboard map with 
+setxkbmap us
+
+There's a premade pc file in this repo if you don't want to do it yourself.
+
+
+There are many sections in these files.  The top one appears to bethe default so just modify that one I suppose.
+
+To change other keys modify /usr/share/X11/xkb/symbols/us
+then again reload it with setxkbmap us
+
+
+sudo nano /usr/share/X11/xkb/symbols/pc
 check settings
 setxkbmap -query
-
 set keyboard map to us
 setxkbmap us
 
