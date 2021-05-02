@@ -4,7 +4,8 @@ To change capslock to enter modify /usr/share/X11/xkb/symbols/pc.  God knows why
         key <CAPS> {        [ Return                ]       };
 
 After this reload the keyboard map with 
-setxkbmap us
+
+    setxkbmap us
 
 There's a premade pc file in this repo if you don't want to do it yourself.
 
