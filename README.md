@@ -1,7 +1,7 @@
 To change capslock to enter modify /usr/share/X11/xkb/symbols/pc.  God knows why it's called pc but it contains the information for modifier keys mappings.  As you might imagine you change a line that has capslock in it.
 
-//    key <CAPS> {      [ Caps_Lock             ]       };
-    key <CAPS> {        [ Return                ]       };
+    //    key <CAPS> {      [ Caps_Lock             ]       };
+        key <CAPS> {        [ Return                ]       };
 
 After this reload the keyboard map with 
 setxkbmap us
