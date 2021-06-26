@@ -17,6 +17,8 @@ void singTheSong(int b){
 int main(int argc, char** argv){
     for (int b = 99; b >= 0; --b){
         singTheSong(b);
+		printf("\n");
     }
     return 0;
 }
+
